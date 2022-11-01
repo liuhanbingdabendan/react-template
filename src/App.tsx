@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Routers from './Router'
 
 function App() {
+  const [isLogin, setIsLogin] = useState<boolean>(true);
+  const mockLogin = () => {
+    setIsLogin(true);
+  }
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -18,7 +23,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      {
+        isLogin ? <Routers /> : <div>未登录</div>
+      }
     </div>
   );
 }
